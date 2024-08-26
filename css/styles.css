@@ -126,6 +126,12 @@ ul li a {
     border-radius: 8px;
     height: auto;
 }
+#Testimonials{
+    background: linear-gradient(to right, var(--brand-sld-colors), var(--brand-lght-colors));
+    backdrop-filter: blur(100px);
+    /* For older browsers */
+    -webkit-backdrop-filter: blur(100px);
+}
 
 .brand-color {
     color: var(--brand-lght-colors) !important;
