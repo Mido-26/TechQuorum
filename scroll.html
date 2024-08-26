@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back to Top Example</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Basic styles for the back-to-top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #940e4d;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            display: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .back-to-top:hover {
+            background-color: #5e213e;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="height: 2000px;">Scroll down to see the back-to-top button.</div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top d-flex align-items-center justify-content-center">
+        &#8679; <!-- Arrow Icon -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Check for scroll event
+        $(window).on('scroll', function() {
+            if ($(this).scrollTop() > 100) {
+                $('.back-to-top').fadeIn();
+            } else {
+                $('.back-to-top').fadeOut();
+            }
+        });
+
+        // Scroll to top on button click
+        $('.back-to-top').on('click', function() {
+            $('html, body').animate({ scrollTop: 0 }, '300');
+        });
+    </script>
+</body>
+</html>

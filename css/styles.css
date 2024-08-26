@@ -1,0 +1,221 @@
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('../assets/fonts/RobotoSlab.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../assets/fonts/Nunito.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('../assets/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: 300;
+}
+
+:root {
+    --brand-lght-colors: #940e4d;
+    --brand-sld-colors: #5e213e;
+    --font: "Nunito", sans-serif;
+    --text-color: white;
+    /* --font: "Poppins-Regular", sans-serif !important; */
+    /* --font: "Roboto Slab", serif; */
+}
+
+*,
+a,
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: var(--font) !important;
+}
+
+nav {
+    background: rgba(0, 0, 0, 0.5);
+    color: white !important;
+}
+
+ul li {
+    list-style: none;
+    padding: 5px 10px;
+    margin: 0 2px;
+    color: gray !important;
+}
+
+ul li a:hover,
+.active {
+    border-bottom: 2px solid var(--brand-lght-colors);
+    transition: all .1s linear;
+    /* border-radius: 3px; */
+    background: linear-gradient(to top, rgba(148, 14, 77, 0.25), rgba(0, 0, 0, 0.0));
+    transition: all 0.3s ease-in-out;
+}
+
+ul li a {
+    font-size: medium;
+    /* color: var(--brand-lght-colors) !important; */
+    color: white !important;
+}
+
+.hero-section {
+    background-color: var(--brand-sld-colors);
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+    background-image: url(../assets/img/blog/5.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, var(--brand-sld-colors), var(--brand-lght-colors));
+    opacity: 0.3;
+    z-index: -1;
+    backdrop-filter: blur(100px);
+    /* For older browsers */
+    -webkit-backdrop-filter: blur(100px);
+}
+
+.hero-section h1 {
+    z-index: 1;
+    position: relative;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.services-section .card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: var(--brand-lght-colors);
+    box-shadow: 0 0 0 0.2rem rgba(148, 14, 77, 0.25);
+}
+
+.custom-gradient {
+    background: linear-gradient(0deg, var(--brand-lght-colors), #fff);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    height: auto;
+}
+
+.brand-color {
+    color: var(--brand-lght-colors) !important;
+    border-color: var(--brand-lght-colors) !important;
+}
+
+.brand-color:hover {
+    color: var(--brand-sld-colors);
+    border-color: var(--brand-sld-colors);
+}
+
+.brand-colors {
+    color: var(--text-color) !important;
+    background-color: var(--brand-lght-colors) !important;
+    border-color: var(--brand-lght-colors) !important;
+}
+
+.card-icon {
+    font-size: 2rem;
+    color: var(--brand-lght-colors);
+    margin-bottom: 1rem;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.contact-map {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.team-member:hover, .team-member::after{
+    background: rgba(148, 14, 77, 0.05);
+}
+#team .card{
+    /* height: 256px; */
+}
+
+.img-icon {
+    width: 90px;
+    /* background: rgba(255, 255, 255, 0.8); */
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    padding: 1rem;
+    border-top: 2px dashed var(--brand-lght-colors);
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.team-member:hover .team-social-icon {
+    opacity: 1;
+}
+
+.team-social-icon a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* back to top button  */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: var(--brand-lght-colors);
+    background-color: var(--text-color);
+    padding: 10px 15px;
+    border-radius: 50%;
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.back-to-top:hover {
+    color: var(--brand-sld-colors);
+    background-color: antiquewhite;
+}
+
+@media (max-width: 992.98px) {
+
+    ul li a:hover,
+    .active {
+        border: none;
+        /* Remove border-bottom */
+        border-left: 2px solid var(--brand-lght-colors);
+        background: linear-gradient(to right, rgba(148, 14, 77, 0.25), rgba(0, 0, 0, 0.0));
+        transition: all 0.3s ease-in-out;
+        /* Apply border-left */
+        /* padding-left: 5px; */
+    }
+}
