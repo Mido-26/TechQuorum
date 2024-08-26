@@ -19,7 +19,7 @@
       <div class="container d-flex justify-content-between align-items-center">
         <!-- Brand -->
         <a href="#hero" class="navbar-brand text-decoration-none text-white fw-bolder ">
-          <!-- <img src="assets/logo/techsolutionsLogo.png" alt="" srcset="" style="width: 80px;"> -->
+          <img src="assets/logo/logo.png" alt="" srcset="" style="width: 40px;">
           techQuorum
         </a>
 
@@ -394,15 +394,15 @@
               allowfullscreen="" loading="lazy"></iframe>
           </div>
           <div class="col-md-6">
-            <form class="mx-auto bg-light p-4 rounded shadow-sm" style="max-width: 600px;">
+            <form class="mx-auto bg-light p-4 rounded shadow-sm sms" style="max-width: 600px;">
               <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Your Name">
+                <input type="text" class="form-control" placeholder="Your Name" required>
               </div>
               <div class="mb-3">
-                <input type="email" class="form-control" placeholder="Your Email">
+                <input type="email" class="form-control" placeholder="Your Email" required>
               </div>
               <div class="mb-3">
-                <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+                <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
               </div>
               <button type="submit" class="btn btn-lg btn-primary" style="background-color: #940e4d; border: none;">Send
                 Message</button>
@@ -502,6 +502,14 @@
         const $sections = $('section');
         const $navLinks = $('.nav-link');
 
+        $('.sms').on('submit', function (e) {
+          e.preventDefault();
+          // Notification.requestPermission()
+          //   .then(Permission => {
+          //     new Notification('Hello, World');
+          //   })
+        });
+
         $(window).on('scroll', function () {
           let currentSection = '';
 
@@ -523,6 +531,7 @@
           });
         });
       });
+
 
     </script>
   </body>
