@@ -1,0 +1,85 @@
+/* Toast Notification Styles */
+#toast-box{
+    position: fixed;
+    z-index: 999;
+    height: 100%;
+    width: auto;
+    top: 100px;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    align-items: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+    /* background-color: blue; */
+
+ }
+ .toast{
+    width: auto;
+    /* max-width: 220px; */
+    height: 50px;
+    border-radius: 7px 7px 7px 7px;
+    padding-right: 10px;
+    background-color: white;
+    font-family: inherit;
+    font-weight: 500;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform: translateX(100%);
+    animation: moveleft 0.5s ease-in-out forwards;
+    /* border-color: aqua; */
+    opacity: 1 !important;
+ }
+ @keyframes moveleft {
+        100%{
+            transform: translateX(0);
+        }
+ }
+ .toast i{
+    margin: 0 10px;
+    font-size: 25px;
+    color: green;
+ }
+ .toast i.error{
+    color: red;
+ }
+ .toast i.warning{
+    color: orange;
+ }
+ .toast i.success{
+    color: green;
+ }
+ .toast.error::after{
+    background-color: red;
+ }
+ .toast.warning::after{
+    background-color: orange;
+ }
+ 
+ .toast::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 10px;
+    width: 100%;
+    height: 3px;
+    background-color: green;
+    animation: anim 2.9s linear forwards;
+ }
+ @keyframes anim {
+    100%{
+        width: 0;
+    }
+ }
+
+/* button{
+    width: 70px;
+    height: 30px;
+    background-color: #c22525;
+} */

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/notify.css">
     <!-- <script src="js/taiwind.js"></script> -->
   </head>
 
@@ -389,74 +390,83 @@
           project.</p>
         <div class="row">
           <!-- Map Section -->
+
           <div class="col-md-6">
             <iframe class="contact-map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2407.6609280371536!2d39.28301655129974!3d-6.750006538448355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c1b9f76fc2d87%3A0x3c6a1d7a6eb0c7a2!2sMwenge%20Street%2C%20Dar%20Es%20Salaam%2C%20Tanzania!5e0!3m2!1sen!2s!4v1636488720727!5m2!1sen!2s"
               allowfullscreen="" loading="lazy"></iframe>
           </div>
           <div class="col-md-6">
-            <form class="mx-auto bg-light p-4 rounded shadow-sm sms" style="max-width: 600px;">
+            <form id="contactForm" class="mx-auto bg-light p-4 rounded shadow-sm" style="max-width: 600px;"
+              action="send_message.php" method="POST" novalidate>
+              <div id="formMessage" class="mb-3"></div>
               <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Your Name" required>
+                <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                <div class="invalid-feedback">Please enter your name.</div>
               </div>
               <div class="mb-3">
-                <input type="email" class="form-control" placeholder="Your Email" required>
+                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
               </div>
               <div class="mb-3">
-                <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                <textarea class="form-control" name="message" rows="4" placeholder="Your Message" required></textarea>
+                <div class="invalid-feedback">Please enter your message.</div>
               </div>
-              <button type="submit" class="btn btn-lg btn-primary" style="background-color: #940e4d; border: none;">Send
+              <button type="submit" id="btn" class="btn btn-lg btn-primary"
+                style="background-color: #940e4d; border: none;">Send
                 Message</button>
             </form>
           </div>
         </div>
 
-        <div class="mt-5">
-          <p class="text-muted">
-            <i class="fas fa-map-marker-alt"></i>
-            <a href="https://www.google.com/maps?q=Mwenge+Street,+Dar+Es+Salaam,+Tanzania" target="_blank"
-              class="text-muted text-decoration-none">Mwenge Street, Dar Es Salaam, Tanzania</a>
-          </p>
-          <p class="text-muted text-center ">
-            <i class="fas fa-phone"></i>
-            <a href="tel:+255613339583" class="text-muted text-decoration-none">Phone: (255) 613-339-583</a>
+      </div>
 
-            <i class="fas fa-phone px-3"></i>
-            <a href="tel:+255789498544" class="text-muted text-decoration-none">Phone: (255) 789-498-544</a>
-          </p>
-          <p class="text-muted">
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:contact@techQuorum.com" class="text-muted text-decoration-none">Email:
-              contact@techqourum.com</a>
-          </p>
-        </div>
+      <div class="mt-5">
+        <p class="text-muted text-center">
+          <i class="fas fa-map-marker-alt"></i>
+          <a href="https://www.google.com/maps?q=Mwenge+Street,+Dar+Es+Salaam,+Tanzania" target="_blank"
+            class="text-muted text-decoration-none">Mwenge Street, Dar Es Salaam, Tanzania</a>
+        </p>
+        <p class="text-muted text-center ">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+255613339583" class="text-muted text-decoration-none">Phone: (255) 613-339-583</a>
 
-        <div class="mt-4">
-          <a href="https://wa.me/255613339583" target="_blank" class="text-primary text-decoration-none"
-            style="color: #25D366 !important; text-decoration: none;">
-            <i class="fab fa-whatsapp"></i> WhatsApp
-          </a> |
-          <a href="https://www.linkedin.com/company/techqourum" target="_blank"
-            class="text-primary text-decoration-none" style="color: #0077b5 !important; text-decoration: none;">
-            <i class="fab fa-linkedin"></i> LinkedIn
-          </a> |
-          <a href="https://twitter.com/techqourum" target="_blank" class="text-primary text-decoration-none"
-            style="color: #1da1f2 !important; text-decoration: none;">
-            <i class="fab fa-twitter"></i> Twitter
-          </a> |
-          <a href="https://www.facebook.com/techqourum" target="_blank" class="text-primary text-decoration-none"
-            style="color: #1877f2 !important; text-decoration: none;">
-            <i class="fab fa-facebook-f"></i> Facebook
-          </a> |
-          <a href="https://www.instagram.com/techqourum" target="_blank" class="text-primary text-decoration-none"
-            style="color: #c32aa3 !important; text-decoration: none;">
-            <i class="fab fa-instagram"></i> Instagram
-          </a>
-        </div>
+          <i class="fas fa-phone px-3"></i>
+          <a href="tel:+255789498544" class="text-muted text-decoration-none">Phone: (255) 789-498-544</a>
+        </p>
+        <p class="text-muted text-center">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:techquorum@toujourszanzibar.co.tz" class="text-muted text-decoration-none">Email:
+            contact@techqourum.com</a>
+        </p>
+      </div>
 
+
+      <div class="mt-4 d-flex justify-content-center">
+        <a href="https://wa.me/255613339583" target="_blank" class="text-primary text-decoration-none"
+          style="color: #25D366 !important; text-decoration: none;">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a> |
+        <a href="https://www.linkedin.com/company/techqourum" target="_blank" class="text-primary text-decoration-none"
+          style="color: #0077b5 !important; text-decoration: none;">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a> |
+        <a href="https://twitter.com/techqourum" target="_blank" class="text-primary text-decoration-none"
+          style="color: #1da1f2 !important; text-decoration: none;">
+          <i class="fab fa-twitter"></i> Twitter
+        </a> |
+        <a href="https://www.facebook.com/techqourum" target="_blank" class="text-primary text-decoration-none"
+          style="color: #1877f2 !important; text-decoration: none;">
+          <i class="fab fa-facebook-f"></i> Facebook
+        </a> |
+        <a href="https://www.instagram.com/techqourum" target="_blank" class="text-primary text-decoration-none"
+          style="color: #c32aa3 !important; text-decoration: none;">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
       </div>
     </section>
 
+    <div id="toast-box"></div>
     <!-- Footer -->
     <footer class="py-4 text-white text-center" style="background-color: #940e4d;">
       <div class="container">
@@ -475,6 +485,7 @@
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/notifications.js"></script>
     <script>
       $(document).ready(function () {
         $('.nav-link').on('click', function () {
@@ -532,9 +543,53 @@
           });
         });
       });
-
-
     </script>
+    <script>
+      $(document).ready(function () {
+          // Bootstrap form validation using jQuery
+          $('#contactForm').on('submit', function (e) {
+              e.preventDefault(); // Prevent the default form submission
+  
+              // Check if the form is valid
+              if (!this.checkValidity()) {
+                  $(this).addClass('was-validated');
+                  return false;
+              }
+  
+              // Disable the button and add the spinner
+              $('#btn').prop('disabled', true);
+              $('#btn').html(`<span class="spinner-border spinner-border-sm text-light" role="status" aria-hidden="true"></span> Sending...`);
+  
+              // AJAX request
+              $.ajax({
+                  url: 'send_message.php', // Path to your PHP file
+                  type: 'POST',
+                  data: $(this).serialize(), // Serialize form data
+                  success: function (response) {
+                      const result = response;
+  
+                      if (result.success) {
+                          showToast('success', result.message);
+                          $('#contactForm')[0].reset(); // Reset the form
+                          $('#contactForm').removeClass('was-validated'); // Remove validation styling
+                      } else {
+                          showToast('error', result.message);
+                      }
+                  },
+                  error: function () {
+                      showToast('error', 'An error occurred. Please try again.');
+                  },
+                  complete: function () {
+                      // Re-enable the button and restore the original text
+                      $('#btn').prop('disabled', false);
+                      $('#btn').html('Send Message');
+                  }
+              });
+          });
+      });
+  </script>
+  
+
   </body>
 
 </html>
